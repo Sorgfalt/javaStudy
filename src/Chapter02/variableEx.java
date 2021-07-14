@@ -1,3 +1,5 @@
+package Chapter02;
+
 import java.util.*;
 
 public class variableEx {

@@ -1,3 +1,5 @@
+package Chapter02;
+
 import java.util.Scanner;
 
 public class variableEx2 {
