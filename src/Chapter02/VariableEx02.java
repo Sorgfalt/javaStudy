@@ -2,7 +2,7 @@ package Chapter02;
 
 import java.util.Scanner;
 
-public class variableEx2 {
+public class VariableEx02 {
     public static void main(String[] args) {
         //상수를 이용하여 타입이 다른 값들을 더하고 문자를 입력받아 출력하는 프로그램
         final double PI = 3.14;

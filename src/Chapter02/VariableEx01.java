@@ -2,7 +2,7 @@ package Chapter02;
 
 import java.util.*;
 
-public class variableEx {
+public class VariableEx01 {
     public static void main(String[] args) {
         //숫자를 입력하여 타입이 다른 변수를 형변환하여 두 값을 더하는 프로그램
         Scanner sc = new Scanner(System.in);

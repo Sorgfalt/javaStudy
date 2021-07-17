@@ -2,7 +2,7 @@ package Chapter03;
 
 import java.util.Scanner;
 
-public class operator01 {
+public class OperatorEx01 {
     public static void main(String[] args) {
         //계산기 프로그램
         Scanner sc = new Scanner(System.in);
