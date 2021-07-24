@@ -22,7 +22,7 @@ class Calculator {
         int num;
 
         do {
-            System.out.printf("1. 덧셈, 2. 뺄셈, 3. 곱셈, 4.나눗셈 %n");
+            System.out.printf("1. 덧셈, 2. 뺄셈, 3. 곱셈, 4.나눗셈 5. 종료%n");
             num = sc.nextInt();
 
             switch (num) {
@@ -38,8 +38,10 @@ class Calculator {
                 case 4:
                     div();
                     break;
+                case 5:
+                    break;
             }
-        } while (num != 4);
+        } while (num != 5);
     }
 
     public void add() {

@@ -10,7 +10,7 @@ public class PrjMng {
 }
 
 class PrjCrud {
-    Scanner input = new Scanner(System.in);
+    public Scanner input;
     //menuName란 변수를 ArrayList에 담음
     ArrayList menuName = new ArrayList();
     //menuPrice란 변수를 ArrayList에 담음
@@ -18,7 +18,7 @@ class PrjCrud {
 
     // 생성자 생성
     public PrjCrud() {
-
+        input = new Scanner(System.in);
     }
 
     // init 생성
@@ -26,7 +26,7 @@ class PrjCrud {
         int num;
 
         do {
-            System.out.println("1. 상품 등록, 2. 상품 조회 , 3. 상품 수정, 4. 상품 삭제");
+            System.out.println("1. 상품 등록, 2. 상품 조회 , 3. 상품 수정, 4. 상품 삭제, 5. 종료");
             num = input.nextInt();
             switch (num) {
                 case 1:
@@ -41,8 +41,10 @@ class PrjCrud {
                 case 4:
                     prdDelete();
                     break;
+                case 5:
+                    break;
             }
-        } while (num != 4);
+        } while (num != 5);
     }
 
     public void prdCreate() {
@@ -63,7 +65,7 @@ class PrjCrud {
         //indexOf 문자열에 특정 단어가 있는지를 찾고 있을 경우 위치값을 리턴
         //str에 상품명을 입력한 값이 들어 있고 그 값을 indexOf로 통해 위차 값 리턴
         temp = menuName.indexOf(str);
-        if (temp == 1) {
+        if (temp == -1) {
             System.out.println("검색 목록에 조회되지 않습니다");
         } else {
             System.out.println("검색된 상품입니다");
@@ -73,10 +75,10 @@ class PrjCrud {
     }
 
     public void prdUpdate() {
-        String name = " ", str = " ";
+        String name = "", str = "";
         int temp = 0, num = 0;
         System.out.println("수정하고 싶은 상품명을 입력해주세요");
-        name = input.nextLine();
+        name = input.next();
         temp = menuName.indexOf(name);
         if (temp == -1) {
             System.out.println("상품명을 찾을 수 없습니다");
@@ -86,16 +88,14 @@ class PrjCrud {
             switch (num) {
                 case 1: {
                     System.out.println("변경하실 상품명을 입력해주세요");
-                    input.nextLine();
-                    str = input.nextLine();
+                    str = input.next();
                     menuName.set(temp, str);
                     System.out.println("변경되었습니다");
                     break;
                 }
                 case 2: {
                     System.out.println("변경하실 가격을 입력해주세요");
-                    input.nextLine();
-                    str = input.nextLine();
+                    str = input.next();
                     menuPrice.set(temp, str);
                     System.out.println("변경되었습니다");
                     break;
@@ -109,13 +109,14 @@ class PrjCrud {
     public void prdDelete() {
         int temp = 0;
         System.out.println("삭제하실 상품명을 입력해주세요");
-        String str = input.nextLine();
+        String str = input.next();
         temp = menuName.indexOf(str);
         if (temp == -1) {
             System.out.println("검색 목록에서 조회되지 않았습니다");
         } else {
             menuName.remove(temp);
             menuPrice.remove(temp);
+            System.out.println("삭제가 완료되었습니다");
         }
     }
 }
