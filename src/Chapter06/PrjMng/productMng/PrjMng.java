@@ -1,6 +1,7 @@
 package Chapter06.PrjMng.productMng;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class PrjMng {
     public static void main(String[] args) {
